@@ -3,16 +3,16 @@ import LoadedData from '../LoadedData/LoadedData';
 
 const DataFromOwnedApi = () => {
     const [data, setData] = useState([]);
-    useEffect(()=> {
+    useEffect(() => {
         fetch('data.json')
             .then(res => res.json())
-        .then(data=>setData(data))
-    },[])
+            .then(data => setData(data))
+    }, [])
     return (
         <div>
             <h1>Created API</h1>
             {
-                data.map(id=><LoadedData id={id}></LoadedData>)
+                data.map(id => <LoadedData id={id}></LoadedData>)
             }
         </div>
     );
